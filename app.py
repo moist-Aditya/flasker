@@ -5,8 +5,9 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
+    name = "World"
     mylist = ['apple', 'banana', 'mango']
-    return render_template("index.html", name="Aditya", mylist=mylist)
+    return render_template("index.html", name=name, mylist=mylist)
 
 
 @app.route('/login')

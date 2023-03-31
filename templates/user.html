@@ -1,12 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello User</title>
-</head>
-<body>
-    <h1>Hello {{ name|capitalize }}!!!</h1>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block more_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='user.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container my_container bg-body-secondary">
+    <h1>Hello {{ username|title }}!!</h1>
+    <div class="utilities container-fluid">
+
+        <h3>View Bill:</h3>
+
+        <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action"><p>Electricity</p>
+                <img src="{{ url_for('static', filename='images/electricity.png') }}" alt="Electricity Logo">
+            </a>
+            <a href="#" class="list-group-item list-group-item-action"><p>Water</p>
+                <img src="{{ url_for('static', filename='images/water.png') }}" alt="Water Logo">
+            </a>
+            <a href="#" class="list-group-item list-group-item-action"><p>Broadband</p>
+                <img src="{{ url_for('static', filename='images/broadband.png') }}" alt="Broadband Logo">
+            </a>
+            <a href="#" class="list-group-item list-group-item-action"><p>Mobile</p>
+                <img src="{{ url_for('static', filename='images/mobile.png') }}" alt="Mobile Logo">
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

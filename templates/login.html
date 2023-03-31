@@ -11,9 +11,9 @@
 
     <!-- Move to base.html -->
     {% block more_css %}
-        <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
 
-        <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Roboto:wght@400;700&display=swap" rel="stylesheet"> -->
     {% endblock %}
@@ -21,34 +21,43 @@
 
 <body>
 
-{% block content %}
+    {% block content %}
 
+    <!-- Bootstrap alert -->
+    {% if msg %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            {{ msg|safe }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% endif %}
+
+    <!-- Login Page -->
     <div class="my_container">
 
         <!-- Heading -->
         <h1>Login</h1>
 
-    <form action='/login' method="POST">
+        <form action='/login' method="POST">
 
-        <!-- Username Field -->
-        <div class="field">
-            <label for="user">Username</label>
-            <input type="text" name="username" id="user" placeholder="Type your username">
-        </div>
+            <!-- Username Field -->
+            <div class="field">
+                <label for="user">Username</label>
+                <input type="text" name="username" id="user" placeholder="Type your username">
+            </div>
 
-        <!-- Password Field -->
-        <div class="field">
-            <label for="pass">Password</label>
-            <input type="email" name="password" id="pass" placeholder="Type your password">
-        </div>
+            <!-- Password Field -->
+            <div class="field">
+                <label for="pass">Password</label>
+                <input type="password" name="password" id="pass" placeholder="Type your password">
+            </div>
 
-        <!-- Forgot Password -->
-        <a href="#" class="forgot_pass">Forgot Password?</a>
+            <!-- Forgot Password -->
+            <a href="#" class="forgot_pass">Forgot Password?</a>
 
-        <!-- Login Button -->
-        <input type="submit" value="LOGIN">
+            <!-- Login Button -->
+            <input type="submit" value="LOGIN" name="login_btn">
 
-    </form>
+        </form>
 
         <!-- New User -->
         <div class="register">
@@ -58,7 +67,7 @@
 
     </div>
 
-{% endblock %}
+    {% endblock %}
 
 </body>
 

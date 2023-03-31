@@ -1,0 +1,27 @@
+.my_container {
+    margin-top: 3rem;
+    padding: 2rem;
+    border-radius: 20px;
+}
+
+h1 {
+    font-weight: 700;
+    margin-bottom: 3rem;
+}
+
+h3 {
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+
+img {
+    width: 2.5rem;
+    float: right;
+}
+
+
+
+p {
+    max-width: max-content;
+    display: inline-block;
+}

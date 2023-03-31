@@ -1,3 +1,5 @@
+{% extends 'base.html' %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,20 +9,14 @@
     <title>Home</title>
 </head>
 <body>
-    <h1>Hello {{name}}!</h1>
-    <a href="/login">Login Page</a>
-    <h3>This is my list: -</h3>
 
+{% block content %}
 
-    {% for item in mylist %}
+        <h1>Hello {{name}}!</h1>
+        
+        <a href="{{ url_for('login') }}">Login Page</a>
 
-        {% if item=='mango' %}
-            {{ item + ' mine' }}<br>
-        {% else %}
-            {{ item }}<br>
-        {% endif %}
-
-    {% endfor %}
+{% endblock %}
 
 </body>
 </html>

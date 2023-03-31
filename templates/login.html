@@ -1,13 +1,61 @@
+{% extends 'base.html' %}
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
+
+    <!-- Move to base.html -->
+    {% block more_css %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+        <!-- Google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    {% endblock %}
 </head>
+
 <body>
-    <h1>This is the login page</h1>
-    <a href="/">Go back</a>
+
+{% block content %}
+
+    <div class="my_container">
+
+        <!-- Heading -->
+        <h1>Login</h1>
+
+        <!-- Username Field -->
+        <div class="field">
+            <label for="user">Username</label>
+            <input type="text" name="username" id="user" placeholder="Type your username">
+        </div>
+
+        <!-- Password Field -->
+        <div class="field">
+            <label for="pass">Password</label>
+            <input type="email" name="password" id="pass" placeholder="Type your password">
+        </div>
+
+        <!-- Forgot Password -->
+        <a href="#" class="forgot_pass">Forgot Password?</a>
+
+        <!-- Login Button -->
+        <input type="submit" value="LOGIN">
+
+        <!-- New User -->
+        <div class="register">
+            <p>Not Registered?</p>
+            <a href="#">SIGN UP</a>
+        </div>
+
+    </div>
+
+{% endblock %}
+
 </body>
+
 </html>

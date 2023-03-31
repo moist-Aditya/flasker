@@ -3,25 +3,30 @@ from flask import Flask, render_template, redirect, request
 #create a Flask instance
 app = Flask(__name__)
 
+
+# Index Page
 @app.route('/')
 def index():
-    name = "World"
-    mylist = ['apple', 'banana', 'mango']
-    return render_template("index.html", name=name, mylist=mylist)
+    return render_template("index.html")
 
 
-@app.route('/login')
+# Login Page
+@app.route('/login', methods=['GET', 'POST'])
 def login():
     return render_template("login.html")
 
 
-@app.route('/user/<name>')
-def user(name):
-    return render_template("user.html", name=name)
 
 
+
+# Error Handling --------------------------------
 
 #Invalid URL
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template("404.html"), 404
+
+#Internal Server Error
+@app.errorhandler(500)
+def page_not_found(e):
+    return render_template("500.html"), 500

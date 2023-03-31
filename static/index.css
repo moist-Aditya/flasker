@@ -1,0 +1,11 @@
+h1 {
+    font-weight: 900;
+    margin-bottom: 3rem;
+}
+
+.my_container {
+    /* background-color: #fff; */
+    padding: 2rem;
+    margin-top: 3rem;
+    border-radius: 20px;
+}

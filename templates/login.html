@@ -12,10 +12,10 @@
     <!-- Move to base.html -->
     {% block more_css %}
         <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
-        <!-- Google fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
+
+        <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Roboto:wght@400;700&display=swap" rel="stylesheet"> -->
     {% endblock %}
 </head>
 
@@ -27,6 +27,8 @@
 
         <!-- Heading -->
         <h1>Login</h1>
+
+    <form action='/login' method="POST">
 
         <!-- Username Field -->
         <div class="field">
@@ -45,6 +47,8 @@
 
         <!-- Login Button -->
         <input type="submit" value="LOGIN">
+
+    </form>
 
         <!-- New User -->
         <div class="register">

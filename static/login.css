@@ -60,7 +60,8 @@ a {
 
 .forgot_pass {
     display: block;
-    margin-left: auto;
+    /* margin-left: auto; */
+    float: right;
     margin-top: .825rem;
     font-size: .7rem;
     color: var(--clr-secondary);

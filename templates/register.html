@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register New User</title>
+
+    {% block more_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='register.css') }}">
+
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet"> -->
+    {% endblock %}
+</head>
+
+<body>
+
+    {% block content %}
+
+    <!-- Bootstrap alert -->
+    {% if msg %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        {{ msg|safe }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endif %}
+
+    <div class="my_container">
+
+        <!-- Heading -->
+        <h1>Register</h1>
+
+        <form action="/register" method="POST">
+            <!-- First Name Field -->
+            <div class="field">
+                <label for="f_name">First Name</label>
+                <input type="text" name="f_name" id="f_name" placeholder="Type your First Name">
+            </div>
+            <!-- Last Name Field -->
+            <div class="field">
+                <label for="f_name">Last Name</label>
+                <input type="text" name="l_name" id="l_name" placeholder="Type your Last Name">
+            </div>
+
+            <!-- Email Field -->
+            <div class="field">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="Type your Email">
+            </div>
+
+            <!-- Username Field -->
+            <div class="field">
+                <label for="user">Username</label>
+                <input type="text" name="username" id="user" placeholder="Create a new Username">
+            </div>
+
+            <!-- Password Field -->
+            <div class="field">
+                <label for="pass">Password</label>
+                <input type="password" name="password" id="pass" placeholder="Create a new Password">
+            </div>
+
+            <!-- Signup Button -->
+            <input type="submit" value="SIGNUP" name="signup_btn">
+
+        </form>
+
+
+    </div>
+
+    {% endblock %}
+
+</body>
+
+</html>
